@@ -1,11 +1,13 @@
 <h1>Contents</h1>
 
 <% @contents.each do | content | %>
-    Title: <%= content.title %><br>
-    Description: <%= content.description %> </br>
- <%= link_to 'Show', content_path(content) %>
- <%= link_to 'Edit', edit_content_path(content) %>
- <%= link_to 'Delete', content_path(content), method: :delete, data: { confirm: 'Are you sure, you want to delete!'} %>
+    <%= link_to 'Show', content_path(content) %>
+    <%= link_to 'Edit', edit_content_path(content) %>
+    <%= link_to 'Delete', content_path(content), method: :delete, data: { confirm: 'Are you sure, you want to delete!'} %>
+    <strong>Title:</strong> <%= content.title %><br>
+    <strong>Description: </strong> <%= content.description %> </br>
+    <strong>Tags:</strong> <%= content.tags.pluck(:name).join(', ')%>
+ 
 
 
  </br>
