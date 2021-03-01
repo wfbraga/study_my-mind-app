@@ -13,8 +13,15 @@ Errors: <%= content.errors.full_messages.join(', ')%> </br>
         <%= form.label :description %>
         <%= form.text_area :description %>
     </div>
+
+    <div class="field">
+        <%= form.label :tags %>
+        <%= form.select :tags, options_for_select(current_user.tags.pluck(:name), content.tags.pluck(:name)), {}, { class: "js-example-tokenizer", multiple: 'multiple', style: 'width: 40%'}%>
+    </div>
+
     <div class="action">
         <%= form.submit 'Salvar'%>
     </div>
-        
+
 <% end %>
+
