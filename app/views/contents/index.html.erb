@@ -5,7 +5,7 @@
     Description: <%= content.description %> </br>
  <%= link_to 'Show', content_path(content) %>
  <%= link_to 'Edit', edit_content_path(content) %>
- <%= link_to 'Delete', content_path(content, method: :destroy) %>
+ <%= link_to 'Delete', content_path(content), method: :delete, data: { confirm: 'Are you sure, you want to delete!'} %>
 
 
  </br>
