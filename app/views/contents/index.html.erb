@@ -2,5 +2,12 @@
 
 <% @contents.each do | content | %>
     Title: <%= content.title %><br>
-    Description: <%= content.description %>
+    Description: <%= content.description %> </br>
+ <%= link_to 'Show', content_path(content) %>
+ <%= link_to 'Edit', edit_content_path(content) %>
+ <%= link_to 'Delete', content_path(content, method: :destroy) %>
+
+
+ </br>
+ </br>
 <% end %>
