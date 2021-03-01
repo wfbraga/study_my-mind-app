@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   get 'home/index' #get 'home', to: 'home#index' tem exatamente o mesmo efeito
+
+  resources :contents
 end
