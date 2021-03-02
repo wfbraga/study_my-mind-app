@@ -4,23 +4,25 @@ Errors: <%= content.errors.full_messages.join(', ')%> </br>
 
 <%= form_with(model: @content, local: true) do | form | %>
 
-    <div class="field">
-        <%= form.label :title %>
-        <%= form.text_field :title %>
-    </div>
+    <div class="form-group">
+        <div class="field">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: 'form-control' %>
+        </div>
 
-    <div class="field">
-        <%= form.label :description %>
-        <%= form.text_area :description %>
-    </div>
+        <div class="form-group">
+            <%= form.label :description %>
+            <%= form.text_area :description, class: 'form-control' %>
+        </div>
 
-    <div class="field">
-        <%= form.label :tags %>
-        <%= form.select :tags, options_for_select(current_user.tags.pluck(:name), content.tags.pluck(:name)), {}, { class: "js-example-tokenizer", multiple: 'multiple', style: 'width: 40%'}%>
-    </div>
+        <div class="form-group">
+            <%= form.label :tags %>
+            <%= form.select :tags, options_for_select(current_user.tags.pluck(:name), content.tags.pluck(:name)), {}, { class: " form-control js-example-tokenizer", multiple: 'multiple'}%>
+        </div>
 
-    <div class="action">
-        <%= form.submit 'Salvar'%>
+        <div class="action">
+            <%= form.submit 'Salvar', class: 'btn btn-primary'%>
+        </div>    
     </div>
 
 <% end %>
